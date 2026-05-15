@@ -26,9 +26,10 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v6
-
-      - name: Update the ${{ env.TAG_NAME }} tag
-        id: update-major-tag
-        uses: ./
         with:
-          source-tag: ${{ env.TAG_NAME }}
+          fetch-depth: 0
+
+      - name: Update the major tag to point to ${{ env.TAG_NAME }}
+        uses: haya14busa/action-update-semver@v1
+        with:
+          tag: ${{ env.TAG_NAME }}
