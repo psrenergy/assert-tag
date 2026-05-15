@@ -32,4 +32,3 @@ jobs:
         uses: ./
         with:
           source-tag: ${{ env.TAG_NAME }}
-          slack-webhook: ${{ secrets.SLACK_WEBHOOK }}
