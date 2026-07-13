@@ -39,7 +39,7 @@ runs:
       shell: bash
       run: echo "tag=${{ inputs.prefix }}${{ steps.toml.outputs.value }}" >> "$GITHUB_OUTPUT"
 
-    - uses: mukunku/tag-exists-action@v1.6.0
+    - uses: mukunku/tag-exists-action@v1.7.0
       id: check
       with:
         tag: ${{ steps.compose.outputs.tag }}
